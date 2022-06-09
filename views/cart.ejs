@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Cart</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/all.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/cart.js"></script>
+
+  <!-- External fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <% if (logged===1) { %>
+    <%- include('partials/_nav_user') %>
+  <% } else { %>
+    <%- include('partials/_nav_guest') %>
+  <% } %>
+
+    <div id="outer-container">
+      <main>
+      <section id="cart-items">
+        <!-- Content is inserted here -->
+      </section>
+      <footer>
+        <form class="submit-order" action="/cart/submitOrder" method="POST">
+        <span class="order-total-line">Order Total: $<span id="order-total"></span>.00</span>
+        <div class="order-button">
+        <button class="submit-button">Place the order</button>
+        </div>
+      </form>
+    </footer>
+    </main>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+@import 'variables';
+body {
+  font-family: "Nunito", sans-serif;
+  // font-family: 'Silka webfont';
+  background-color: $darkest-blue;
+  @include lobster-curstor();
+  height: 100vh;
+  min-width:500px;
+}
+
+#outer-container {
+  display: flex;
+  justify-content: center;
+  margin-top:150px;
+}
+
+main {
+  background: white;
+  width: 100%; /*Should be less in desktop view*/
+  padding: 15px;
+  height: 100%;
+  min-height: fit-content;
+}
+
+
+@media only screen and (min-width: 768px) {
+  #outer-container {
+    width: auto;
+    margin: 100px 25px 0px 25px;
+    main {
+      width: 90%;
+      margin-top: 53px
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  #outer-container {
+    width: auto;
+    margin: 100px 25px 0px 25px;
+    main {
+      width: 80%;
+      height: fit-content;
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+#outer-container main {
+    height: 100vh;
+  }
+}
